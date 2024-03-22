@@ -18,7 +18,7 @@ body {
 }
 .friends {
   position: relative;
-  width: 350px;
+  width: 400px;
 }
 .side-2 {
   width: 500px;
@@ -109,4 +109,7 @@ h3 {
   bottom: 10px;
   right: 45px;
   width: 100px;
+}
+.others-expense {
+  background-color: rgba(0, 0, 0, 0.4);
 }
