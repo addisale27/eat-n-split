@@ -10,6 +10,9 @@ body {
   align-items: center;
   padding-top: 100px;
 }
+button {
+  cursor: pointer;
+}
 .main {
   display: flex;
   align-items: start;
