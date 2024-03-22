@@ -48,7 +48,7 @@ function AddFriendBtn({ children }) {
 }
 function AddFriend() {
   return (
-    <div className="flex add-friend-list">
+    <div className="add-friend-list">
       <div className="name grid">
         <span>👭</span>
         <h5>Friend name</h5>
@@ -59,7 +59,9 @@ function AddFriend() {
         <h5>Image URL</h5>
         <input type="text" placeholder="https://i.pravatar.cc/48" />
       </div>
-      <button className="add"> Add</button>
+      <div className="grid">
+        <button className="add"> Add</button>
+      </div>
     </div>
   );
 }

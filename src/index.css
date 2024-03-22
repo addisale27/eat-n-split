@@ -12,12 +12,11 @@ body {
 }
 .friends {
   position: relative;
-  border: 1px solid black;
-  width: 300px;
+
+  width: 350px;
 }
 ul {
   list-style: none;
-  border: 1px solid red;
 }
 .grid {
   display: grid;
@@ -36,7 +35,7 @@ li {
   background-color: rgba(0, 0, 0, 0.02);
 }
 li:hover {
-  background-color: rgb(239, 167, 115);
+  background-color: rgb(248, 227, 201);
 }
 img {
   border-radius: 50%;
@@ -51,29 +50,30 @@ button {
 }
 .add-friend-btn {
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   right: 8px;
 }
 .add-friend-list {
-  border: 1px solid red;
   display: grid;
-  grid-template-columns: 1fr 2fr auto; /* Adjusted grid columns */
+  grid-template-columns: 1fr; /* Adjusted grid columns */
   gap: 10px;
   align-items: center;
+  margin-top: 30px;
+  background-color: rgb(248, 227, 201);
 }
-
 .add-friend-list .add {
-  grid-column-start: 2; /* Position the "Add" button in the third column */
+  grid-column-start: 3;
+  grid-column-end: span 15; /* Position the "Add" button in the third column */
 }
 
 .name,
 .image {
   width: 100%;
-  padding: 10px 0;
-  border: 1px solid red;
+  padding: 10px;
+
   grid-column-end: span 2; /* Each input field spans 2 columns */
 }
 
 input {
-  width: 150px;
+  padding: 5px 5px;
 }
