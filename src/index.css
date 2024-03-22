@@ -10,10 +10,22 @@ body {
   align-items: center;
   padding-top: 100px;
 }
+.main {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 30px;
+}
 .friends {
   position: relative;
-
   width: 350px;
+}
+.side-2 {
+  width: 500px;
+  padding: 50px 20px;
+  background-color: rgb(248, 227, 201);
+  position: relative;
+  border-radius: 10px;
 }
 ul {
   list-style: none;
@@ -29,12 +41,12 @@ ul {
   display: flex;
   flex-direction: column;
 }
-li {
+.friends li {
   padding: 10px;
   margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.02);
 }
-li:hover {
+.friends li:hover {
   background-color: rgb(248, 227, 201);
 }
 img {
@@ -58,22 +70,43 @@ button {
   grid-template-columns: 1fr; /* Adjusted grid columns */
   gap: 10px;
   align-items: center;
+  justify-content: center;
   margin-top: 30px;
   background-color: rgb(248, 227, 201);
+  border-radius: 10px;
 }
 .add-friend-list .add {
   grid-column-start: 3;
-  grid-column-end: span 15; /* Position the "Add" button in the third column */
+  grid-column-end: span 13;
+  margin: 10px 0; /* Position the "Add" button in the third column */
 }
 
 .name,
 .image {
   width: 100%;
   padding: 10px;
-
+  text-align: center;
   grid-column-end: span 2; /* Each input field spans 2 columns */
 }
 
-input {
+input,
+select {
   padding: 5px 5px;
+}
+/*side 2*/
+h3 {
+  text-transform: uppercase;
+}
+.side-2 li {
+  margin: 10px 0;
+}
+.side-2 input,
+.side-2 select {
+  width: 100px;
+}
+.split-bill-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 45px;
+  width: 100px;
 }

@@ -20,14 +20,17 @@ const initialFriends = [
 ];
 export default function App() {
   return (
-    <div className="friends">
-      <ul>
-        {initialFriends.map((friend) => (
-          <FriendsList friend={friend} key={friend.id} />
-        ))}
-      </ul>
-      <AddFriendBtn />
-      <AddFriend />
+    <div className="main">
+      <div className="friends">
+        <ul>
+          {initialFriends.map((friend) => (
+            <FriendsList friend={friend} key={friend.id} />
+          ))}
+        </ul>
+        <AddFriendBtn />
+        <AddFriend />
+      </div>
+      <Split />
     </div>
   );
 }
@@ -62,6 +65,48 @@ function AddFriend() {
       <div className="grid">
         <button className="add"> Add</button>
       </div>
+    </div>
+  );
+}
+function Split() {
+  return (
+    <div className="side-2">
+      <h3>split a bill with addis </h3>
+      <Form>Split bill</Form>
+    </div>
+  );
+}
+function Form({ children }) {
+  return (
+    <div>
+      <form>
+        <ul>
+          <li className="grid">
+            <span>💰</span>
+            <h4>Bill value</h4>
+            <input type="number" />
+          </li>
+          <li className="grid">
+            <span>🕴</span>
+            <h4>Your expense</h4>
+            <input type="text" />
+          </li>
+          <li className="grid">
+            <span>👭</span>
+            <h4>addis`s expense</h4>
+            <input type="text" />
+          </li>
+          <li className="grid">
+            <span>🤑</span>
+            <h4>Who is paying the bill?</h4>
+            <select>
+              <option value="you">you</option>
+              <option value="addis">addis</option>
+            </select>
+          </li>
+        </ul>
+      </form>
+      <button className="split-bill-btn">{children}</button>
     </div>
   );
 }
