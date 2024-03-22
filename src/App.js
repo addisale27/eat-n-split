@@ -1,7 +1,7 @@
 const initialFriends = [
   {
     id: 118836,
-    name: "Clark",
+    name: "Clark ",
     image: "https://i.pravatar.cc/48?u=118836",
     balance: -7,
   },
@@ -23,7 +23,7 @@ export default function App() {
     <div className="friends">
       <ul>
         {initialFriends.map((friend) => (
-          <FriendsList friend={friend} />
+          <FriendsList friend={friend} key={friend.id} />
         ))}
       </ul>
       <AddFriendBtn />
@@ -33,7 +33,7 @@ export default function App() {
 }
 function FriendsList({ friend }) {
   return (
-    <li>
+    <li className="grid">
       <img src={`${friend.image}`} alt="here" />
       <div className="stat">
         <h4>{friend.name}</h4>
@@ -43,22 +43,23 @@ function FriendsList({ friend }) {
     </li>
   );
 }
-function AddFriendBtn() {
+function AddFriendBtn({ children }) {
   return <button className="add-friend-btn">Add Friend</button>;
 }
 function AddFriend() {
   return (
-    <div>
-      <div className="grid add-friend-list">
+    <div className="flex add-friend-list">
+      <div className="name grid">
         <span>👭</span>
         <h5>Friend name</h5>
         <input type="text" />
       </div>
-      <div>
+      <div className="image grid">
         <span>🖼</span>
         <h5>Image URL</h5>
         <input type="text" placeholder="https://i.pravatar.cc/48" />
       </div>
+      <button className="add"> Add</button>
     </div>
   );
 }

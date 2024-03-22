@@ -12,16 +12,26 @@ body {
 }
 .friends {
   position: relative;
+  border: 1px solid black;
+  width: 300px;
 }
 ul {
   list-style: none;
+  border: 1px solid red;
 }
-li {
+.grid {
   display: grid;
   grid-template-columns: 0.5fr 2fr 1fr;
   align-items: center;
-  padding: 10px;
   gap: 10px;
+  width: 100%;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+li {
+  padding: 10px;
   margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.02);
 }
@@ -43,4 +53,22 @@ button {
   position: absolute;
   bottom: -40px;
   right: 8px;
+}
+.add-friend-list {
+  border: 1px solid red;
+}
+
+.add-friend-list .grid {
+  grid-template-columns: 0.5fr 5fr 0.01fr;
+}
+.add-friend-list .add {
+  grid-row-start: 2;
+}
+input {
+  width: 150px;
+}
+.name,
+.image {
+  padding: 10px;
+  border: 1px solid red;
 }
