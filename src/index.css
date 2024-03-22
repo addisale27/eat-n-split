@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+.friends {
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+li:hover {
+  background-color: rgb(239, 167, 115);
+}
+img {
+  border-radius: 50%;
+}
+
+button {
+  background-color: chocolate;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+.add-friend-btn {
+  position: absolute;
+  bottom: -40px;
+  right: 8px;
+}
