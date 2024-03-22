@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const initialFriends = [
   {
     id: 118836,
@@ -19,6 +21,7 @@ const initialFriends = [
   },
 ];
 export default function App() {
+  const [add, setadd] = useState(false);
   return (
     <div className="main">
       <div className="friends">
@@ -27,8 +30,8 @@ export default function App() {
             <FriendsList friend={friend} key={friend.id} />
           ))}
         </ul>
-        <AddFriendBtn />
-        <AddFriend />
+        <AddFriendBtn add={add} setadd={setadd} />
+        <AddFriend add={add} setadd={setadd} />
       </div>
       <Split />
     </div>
@@ -46,27 +49,32 @@ function FriendsList({ friend }) {
     </li>
   );
 }
-function AddFriendBtn({ children }) {
-  return <button className="add-friend-btn">Add Friend</button>;
-}
-function AddFriend() {
+function AddFriendBtn({ children, add, setadd }) {
   return (
-    <div className="add-friend-list">
-      <div className="name grid">
-        <span>👭</span>
-        <h5>Friend name</h5>
-        <input type="text" />
-      </div>
-      <div className="image grid">
-        <span>🖼</span>
-        <h5>Image URL</h5>
-        <input type="text" placeholder="https://i.pravatar.cc/48" />
-      </div>
-      <div className="grid">
-        <button className="add"> Add</button>
-      </div>
-    </div>
+    <button className="add-friend-btn" onClick={() => setadd((add) => !add)}>
+      {add ? `Close` : `Add Friend`}
+    </button>
   );
+}
+function AddFriend({ add, setadd }) {
+  if (add)
+    return (
+      <div className="add-friend-list">
+        <div className="name grid">
+          <span>👭</span>
+          <h5>Friend name</h5>
+          <input type="text" />
+        </div>
+        <div className="image grid">
+          <span>🖼</span>
+          <h5>Image URL</h5>
+          <input type="text" placeholder="https://i.pravatar.cc/48" />
+        </div>
+        <div className="grid">
+          <button className="add"> Add</button>
+        </div>
+      </div>
+    );
 }
 function Split() {
   return (
