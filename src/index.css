@@ -56,19 +56,24 @@ button {
 }
 .add-friend-list {
   border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr 2fr auto; /* Adjusted grid columns */
+  gap: 10px;
+  align-items: center;
 }
 
-.add-friend-list .grid {
-  grid-template-columns: 0.5fr 5fr 0.01fr;
-}
 .add-friend-list .add {
-  grid-row-start: 2;
+  grid-column-start: 2; /* Position the "Add" button in the third column */
 }
-input {
-  width: 150px;
-}
+
 .name,
 .image {
-  padding: 10px;
+  width: 100%;
+  padding: 10px 0;
   border: 1px solid red;
+  grid-column-end: span 2; /* Each input field spans 2 columns */
+}
+
+input {
+  width: 150px;
 }
