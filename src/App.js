@@ -258,6 +258,7 @@ function Form({
               type="text"
               value={+bill - +expense}
               className="others-expense"
+              disabled
             />
           </li>
           <li className="grid">
